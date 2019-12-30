@@ -6,43 +6,60 @@
         {{ pergunta.pergunta }} <br/>
         <span v-if="pergunta.resposta != ''"> {{pergunta.resposta}} </span>
     </li>
-
-    <button v-on:click="alterarPergunta">Alterar</button>
+    <span v-if="this.perguntas[this.perguntaId].type == 'button'">
+        <b  v-for="button in this.perguntas[this.perguntaId].buttons">
+            <button v-on:click="cliqueBotao(button)">{{button}}</button>
+        </b>
+    </span>
+    <span v-if="this.perguntas[this.perguntaId].type == 'text'">
+        <input type="text" class="form-control" v-model="resposta"  v-on:keyup.enter="cliqueBotao(resposta)" placeholder="Digite o Prefixo" />
+        <button type="button" class="btn btn-info" v-on:click="cliqueBotao(resposta)">Enviar </button>
+    </span>
 </div>
 <script>
     var app = new Vue({
         el: '#app',
         data: {
+            resposta: "",
             perguntas: [{
+                type: "text",
                 pergunta: "Olá, tudo bom? Sou o Chue e estamos aqui para facilitar o seu contato com os nossos especialistas! Para isso, eu vou te fazer algumas perguntas e já enviar o seu cadastro para o time responsável. Vamos lá?",
                 resposta: ""
             }, {
+                type: "button",
                 pergunta: "Legal! Qual o seu nome?",
-                resposta: ""
+                resposta: "",
+                buttons: ["Sim", "Não"]
             }, {
+                type: "text",
                 pergunta: "Qual é o nome da empresa?",
                 resposta: ""
             }, {
+                type: "text",
                 pergunta: "Legal! E qual é o CNPJ da empresa?",
                 resposta: ""
             }, {
+                type: "text",
                 pergunta: "Você sabe quantos funcionários a empresa tem?",
                 resposta: ""
             }, {
+                type: "text",
                 pergunta: "Agora só mais algumas perguntas. E qual é o seu e-mail?",
                 resposta: ""
             }, {
+                type: "text",
                 pergunta: "Perfeito! E qual é o seu telefone?",
                 resposta: ""
             }, {
+                type: "text",
                 pergunta: "Agora só preciso saber como você prefere que nossos especialistas entrem em contato:",
                 resposta: ""
             }],
             perguntaId: 0
         },
         methods: {
-            alterarPergunta: function() {
-                this.perguntas[this.perguntaId].resposta = 'aaaaa' + this.perguntaId;
+            cliqueBotao(resposta) {
+                this.perguntas[this.perguntaId].resposta = resposta;
                 this.perguntaId += 1;
             }
         }
