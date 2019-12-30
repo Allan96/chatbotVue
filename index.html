@@ -1,0 +1,50 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<div id="app">
+    <li v-for="pergunta in perguntas.slice(0, perguntaId+1)">
+        {{ pergunta.pergunta }} <br/>
+        <span v-if="pergunta.resposta != ''"> {{pergunta.resposta}} </span>
+    </li>
+
+    <button v-on:click="alterarPergunta">Alterar</button>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            perguntas: [{
+                pergunta: "Olá, tudo bom? Sou o Chue e estamos aqui para facilitar o seu contato com os nossos especialistas! Para isso, eu vou te fazer algumas perguntas e já enviar o seu cadastro para o time responsável. Vamos lá?",
+                resposta: ""
+            }, {
+                pergunta: "Legal! Qual o seu nome?",
+                resposta: ""
+            }, {
+                pergunta: "Qual é o nome da empresa?",
+                resposta: ""
+            }, {
+                pergunta: "Legal! E qual é o CNPJ da empresa?",
+                resposta: ""
+            }, {
+                pergunta: "Você sabe quantos funcionários a empresa tem?",
+                resposta: ""
+            }, {
+                pergunta: "Agora só mais algumas perguntas. E qual é o seu e-mail?",
+                resposta: ""
+            }, {
+                pergunta: "Perfeito! E qual é o seu telefone?",
+                resposta: ""
+            }, {
+                pergunta: "Agora só preciso saber como você prefere que nossos especialistas entrem em contato:",
+                resposta: ""
+            }],
+            perguntaId: 0
+        },
+        methods: {
+            alterarPergunta: function() {
+                this.perguntas[this.perguntaId].resposta = 'aaaaa' + this.perguntaId;
+                this.perguntaId += 1;
+            }
+        }
+    });
+</script>
