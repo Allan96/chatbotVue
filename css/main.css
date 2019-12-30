@@ -1,0 +1,38 @@
+body {
+    background: #F6F9FC;
+}
+
+#app {
+    min-height: 100vh;
+}
+
+#chat {
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.balao {
+    display: block;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    padding: 16px;
+    padding-right: 69px;
+    margin-top: 16px;
+    position: relative;
+    word-wrap: break-word;
+    width: fit-content;
+}
+
+.right .balao {
+    float: right;
+}
+
+#inputs {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding: 24px 0;
+    height: 100px;
+}
