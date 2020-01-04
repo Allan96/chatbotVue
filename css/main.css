@@ -143,3 +143,21 @@ body {
     display: flex;
     justify-content: center;
 }
+
+@media only screen and (max-width: 720px) {
+    #chat {
+        max-height: calc(100vh - 200px);
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    #inputs {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        padding: 24px 0;
+        height: 200px;
+    }
+    .btn-secondary {
+        margin-bottom: 16px;
+    }
+}
