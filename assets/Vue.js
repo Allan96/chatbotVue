@@ -5,29 +5,31 @@ var app = new Vue({
         resposta: "",
         perguntas: [{
             type: "text",
-            pergunta: "Olá, tudo bom? Sou o ChatVue e estamos aqui para facilitar o seu contato com os nossos especialistas! Para isso, eu vou te fazer algumas perguntas e já enviar o seu cadastro para o time responsável. Vamos lá?",
+            pergunta: "Olá, tudo bom? Sou o ChatVue e estamos aqui para fazer uma pequena pesquisa! Vamos começar? Qual o seu nome?",
             resposta: ""
         }, {
             id: 2,
             type: "button",
-            pergunta: "Legal! Qual o seu nome?",
+            pergunta: "Qual seu sexo?",
             resposta: "",
-            buttons: ["Sim", "Não"]
+            buttons: ["Feminino", "Masculino"]
         }, {
             id: 3,
             type: "text",
-            pergunta: "Qual é o nome da empresa?",
+            pergunta: "Qual a data do seu nascimento?",
             resposta: ""
         }, {
             id: 4,
-            type: "text",
-            pergunta: "Legal! E qual é o CNPJ da empresa?",
-            resposta: ""
+            type: "button",
+            pergunta: "Quantas pessoas moram com você?",
+            resposta: "",
+            buttons: ["1-2", "2-3", "3-5", "5-7", "7-10", "10 +"]
         }, {
             id: 5,
-            type: "text",
-            pergunta: "Você sabe quantos funcionários a empresa tem?",
-            resposta: ""
+            type: "button",
+            pergunta: "Qual é a relação de parentesco ou de convivência com a pessoa responsável pelo domicílio?",
+            resposta: "",
+            buttons: ["Pessoa Responsável Pelo Domicílio", "Pai, Mãe, Padrasto Ou Madrasta", "Outro Parente"]
         }, {
             id: 6,
             type: "text",
@@ -40,8 +42,8 @@ var app = new Vue({
             resposta: ""
         }, {
             id: 8,
-            type: "text",
-            pergunta: "Agora só preciso saber como você prefere que nossos especialistas entrem em contato:",
+            type: "",
+            pergunta: "Obrigado por responder nosso questionário!",
             resposta: ""
         }],
         perguntaId: 0
