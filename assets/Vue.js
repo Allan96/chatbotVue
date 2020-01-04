@@ -27,9 +27,9 @@ var app = new Vue({
         }, {
             id: 5,
             type: "button",
-            pergunta: "Qual é a relação de parentesco ou de convivência com a pessoa responsável pelo domicílio?",
+            pergunta: "Você é responsavel por esse domicilio?",
             resposta: "",
-            buttons: ["Pessoa Responsável Pelo Domicílio", "Pai, Mãe, Padrasto Ou Madrasta", "Outro Parente"]
+            buttons: ["Sim", "Não"]
         }, {
             id: 6,
             type: "text",

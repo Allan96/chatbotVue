@@ -154,8 +154,9 @@ body {
         position: fixed;
         width: 100%;
         bottom: 0;
-        padding: 24px 0;
         height: 200px;
+        display: flex;
+        align-items: flex-end;
     }
     .btn-secondary {
         margin-bottom: 16px;
