@@ -1,5 +1,36 @@
+/* ANIMAÇÕES */
+
+@-webkit-keyframes slideInUp {
+    from {
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+        visibility: visible;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+        visibility: visible;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+
+/* ANIMAÇÕES */
+
 body {
     background: #F6F9FC;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
 }
 
 #app {
@@ -10,6 +41,20 @@ body {
     max-height: calc(100vh - 100px);
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+#chat .row:last-child {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#chat .row:last-child .balao:last-child {
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: slideInUp;
+    animation-name: slideInUp;
 }
 
 .balao {
@@ -35,4 +80,66 @@ body {
     bottom: 0;
     padding: 24px 0;
     height: 100px;
+}
+
+.form-control {
+    background: #FFFFFF;
+    -webkit-box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.08);
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    height: 56px;
+    border: 0;
+    font-size: 16px;
+    line-height: 28px;
+    padding: 20px 24px;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: transparent;
+    outline: 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
+    z-index: 1!important;
+}
+
+.btn-secondary {
+    background: #4A4A48;
+    border-radius: 4px;
+    font-size: 20px;
+    line-height: 28px;
+    padding: 12px 32px;
+    border: 0;
+}
+
+.btn-info {
+    background: white;
+    height: 100%;
+    border: none;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    transition: .3s;
+}
+
+.btn-info:hover {
+    background: white;
+    height: 100%;
+    border: none;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    transition: .3s;
+}
+
+.btn-info img {
+    transition: .3s;
+}
+
+.btn-info:hover img {
+    margin-right: -3px;
+    transition: .3s;
+}
+
+.btn-toolbar {
+    display: flex;
+    justify-content: center;
 }

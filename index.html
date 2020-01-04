@@ -7,10 +7,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/main.css?5">
 
     <!-- VueJs -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -39,9 +42,9 @@
                     </div>
                     <div v-if="this.perguntas[this.perguntaId].type == 'text'" class="col-12">
                         <div class="input-group">
-                            <input type="text" class="form-control" v-model="resposta" v-on:keyup.enter="cliqueBotao(resposta)" placeholder="Digite o Prefixo" />
+                            <input type="text" class="form-control" :id="perguntas[this.perguntaId].type" v-model="resposta" v-on:keyup.enter="cliqueBotao(resposta)" placeholder="Insira sua reposta" />
                             <div class="input-group-append">
-                                <button type="button" class="btn btn-info" v-on:click="cliqueBotao(resposta)">Enviar </button>
+                                <button type="button" class="btn btn-info" v-on:click="cliqueBotao(resposta)"><img src="./assets/img/arrow.svg" alt=""> </button>
                             </div>
                         </div>
                     </div>
@@ -55,6 +58,8 @@
 
     <!-- Javascript  -->
     <script src="./componentes/BalaoDeFala.js"></script>
+    <script src="./assets/Vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="./assets/main.js"></script>
 
 
