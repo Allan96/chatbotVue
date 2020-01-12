@@ -6,6 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="manifest" href="./manifest.json">
 
     <!-- Fonte -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
@@ -40,9 +41,9 @@
                             </div>
                         </div>
                     </div>
-                    <div v-if="this.perguntas[this.perguntaId].type == 'text'" class="col-12">
+                    <div v-if="this.perguntas[this.perguntaId].type != 'button' && this.perguntas[this.perguntaId].type != ''" class="col-12">
                         <div class="input-group">
-                            <input type="text" class="form-control" :id="perguntas[this.perguntaId].type" v-model="resposta" v-on:keyup.enter="cliqueBotao(resposta)" placeholder="Insira sua reposta" />
+                            <input type="text" v-on:click="maskInputs()" class="form-control" :id="perguntas[this.perguntaId].type" v-model="resposta" v-on:keyup.enter="cliqueBotao(resposta)" placeholder="Insira sua reposta" />
                             <div class="input-group-append">
                                 <button type="button" class="btn btn-info" v-on:click="cliqueBotao(resposta)"><img src="./assets/img/arrow.svg" alt=""> </button>
                             </div>
@@ -58,9 +59,10 @@
 
     <!-- Javascript  -->
     <script src="./componentes/BalaoDeFala.js"></script>
-    <script src="./assets/Vue.js?5"></script>
+    <script src="./assets/Vue.js?50"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="./assets/main.js"></script>
+    <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+    <script src="./assets/main.js?7"></script>
 
 
 

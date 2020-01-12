@@ -37,7 +37,7 @@ var app = new Vue({
             resposta: ""
         }, {
             id: 7,
-            type: "text",
+            type: "telefone",
             pergunta: "Perfeito! E qual é o seu telefone?",
             resposta: ""
         }, {
@@ -50,14 +50,13 @@ var app = new Vue({
     },
     methods: {
         cliqueBotao(resposta) {
-            if (resposta.length >= 3) {
-                this.perguntas[this.perguntaId].resposta = resposta;
-                this.perguntaId += 1;
-                this.resposta = "";
-            } else {
-                this.perguntas[this.perguntaId].resposta = 'Parece que essa reposta está pequena demais...';
-            }
+            this.perguntas[this.perguntaId].resposta = resposta;
+            this.perguntaId += 1;
+            this.resposta = "";
             IrParaOBalao();
+        },
+        maskInputs() {
+            $('#telefone').inputmask("(99) 9 9999-9999");
         }
     }
 });
