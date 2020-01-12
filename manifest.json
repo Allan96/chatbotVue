@@ -5,6 +5,7 @@
     "background_color": "#000",
     "display": "standalone",
     "start_url": "/",
+    "description": "Chatbot feito em Vue.js",
     "icons": [{
         "src": "./assets/img/icon-72x72.png",
         "sizes": "72x72",
